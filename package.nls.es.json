@@ -1,0 +1,13 @@
+{
+  "modelmeter.displayName": "ModelMeter",
+  "modelmeter.description": "Monitor de uso y costos de API LLM — DeepSeek, OpenAI, Claude, Kimi, SiliconFlow, GLM",
+  "modelmeter.view.name": "Resumen de uso",
+  "modelmeter.cmd.setApiKey": "ModelMeter: Agregar / configurar cuenta API",
+  "modelmeter.cmd.manageApis": "ModelMeter: Administrar cuentas API",
+  "modelmeter.cmd.refresh": "ModelMeter: Actualizar datos de uso",
+  "modelmeter.cmd.testConnection": "ModelMeter: Probar conexión API",
+  "modelmeter.config.title": "ModelMeter",
+  "modelmeter.config.refreshInterval.desc": "Intervalo de actualización automática en segundos (mínimo: 10).",
+  "modelmeter.config.customPricing.desc": "Reemplaza los precios integrados (USD / 1M tokens). Ejemplo: `{ \"my-model\": { \"input\": 1.0, \"output\": 2.0 } }`",
+  "modelmeter.config.showStatusBar.desc": "Mostrar saldo / nombre del proveedor en la barra de estado."
+}

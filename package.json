@@ -1,0 +1,162 @@
+{
+  "name": "modelmeter",
+  "displayName": "%modelmeter.displayName%",
+  "description": "%modelmeter.description%",
+  "version": "1.0.0",
+  "publisher": "MACAT",
+  "author": "MACAT",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sliky1/modelmeter"
+  },
+  "bugs": {
+    "url": "https://github.com/Sliky1/modelmeter/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "LLM",
+    "DeepSeek",
+    "OpenAI",
+    "Claude",
+    "Moonshot",
+    "SiliconFlow",
+    "Token",
+    "Billing",
+    "API",
+    "Cost"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "modelmeter-sidebar",
+          "title": "ModelMeter",
+          "icon": "$(pulse)"
+        }
+      ]
+    },
+    "views": {
+      "modelmeter-sidebar": [
+        {
+          "type": "webview",
+          "id": "modelmeter.usageView",
+          "name": "%modelmeter.view.name%",
+          "contextualTitle": "ModelMeter"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "modelmeter.setApiKey",
+        "title": "%modelmeter.cmd.setApiKey%",
+        "icon": "$(add)"
+      },
+      {
+        "command": "modelmeter.manageApis",
+        "title": "%modelmeter.cmd.manageApis%",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "modelmeter.refreshUsage",
+        "title": "%modelmeter.cmd.refresh%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "modelmeter.testConnection",
+        "title": "%modelmeter.cmd.testConnection%",
+        "icon": "$(plug)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "modelmeter.refreshUsage",
+          "when": "view == modelmeter.usageView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "modelmeter.manageApis",
+          "when": "view == modelmeter.usageView",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "%modelmeter.config.title%",
+      "properties": {
+        "modelmeter.refreshInterval": {
+          "type": "number",
+          "default": 60,
+          "minimum": 10,
+          "maximum": 3600,
+          "markdownDescription": "%modelmeter.config.refreshInterval.desc%"
+        },
+        "modelmeter.customPricing": {
+          "type": "object",
+          "default": {},
+          "markdownDescription": "%modelmeter.config.customPricing.desc%",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "number"
+              },
+              "output": {
+                "type": "number"
+              },
+              "cachedInput": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "input",
+              "output"
+            ]
+          }
+        },
+        "modelmeter.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%modelmeter.config.showStatusBar.desc%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package": "vsce package",
+    "deploy": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.0.0",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "axios": "^1.14.0",
+    "https-proxy-agent": "^7.0.6"
+  }
+}

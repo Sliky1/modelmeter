@@ -1,0 +1,13 @@
+{
+  "modelmeter.displayName": "ModelMeter",
+  "modelmeter.description": "LLM API 사용량 및 비용 모니터 — DeepSeek, OpenAI, Claude, Kimi, SiliconFlow, GLM",
+  "modelmeter.view.name": "사용량 개요",
+  "modelmeter.cmd.setApiKey": "ModelMeter: API 계정 추가 / 설정",
+  "modelmeter.cmd.manageApis": "ModelMeter: API 계정 관리",
+  "modelmeter.cmd.refresh": "ModelMeter: 사용량 데이터 새로 고침",
+  "modelmeter.cmd.testConnection": "ModelMeter: API 연결 테스트",
+  "modelmeter.config.title": "ModelMeter",
+  "modelmeter.config.refreshInterval.desc": "자동 새로 고침 간격(초), 최솟값 10.",
+  "modelmeter.config.customPricing.desc": "내장 모델 가격을 재정의합니다(USD / 1M 토큰). 예: `{ \"my-model\": { \"input\": 1.0, \"output\": 2.0 } }`",
+  "modelmeter.config.showStatusBar.desc": "상태 표시줄에 잔액 / 공급자 이름을 표시합니다."
+}

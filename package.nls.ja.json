@@ -1,0 +1,13 @@
+{
+  "modelmeter.displayName": "ModelMeter",
+  "modelmeter.description": "LLM API 使用量・コスト モニター — DeepSeek、OpenAI、Claude、Kimi、SiliconFlow、GLM",
+  "modelmeter.view.name": "使用量の概要",
+  "modelmeter.cmd.setApiKey": "ModelMeter: API アカウントを追加 / 設定",
+  "modelmeter.cmd.manageApis": "ModelMeter: API アカウントを管理",
+  "modelmeter.cmd.refresh": "ModelMeter: 使用量データを更新",
+  "modelmeter.cmd.testConnection": "ModelMeter: API 接続をテスト",
+  "modelmeter.config.title": "ModelMeter",
+  "modelmeter.config.refreshInterval.desc": "自動更新の間隔（秒）。最小値は 10 です。",
+  "modelmeter.config.customPricing.desc": "モデルの組み込み価格を上書きします（USD / 1M トークン）。例: `{ \"my-model\": { \"input\": 1.0, \"output\": 2.0 } }`",
+  "modelmeter.config.showStatusBar.desc": "ステータスバーに残高 / プロバイダー名を表示します。"
+}

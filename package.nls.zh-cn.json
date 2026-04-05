@@ -1,0 +1,13 @@
+{
+  "modelmeter.displayName": "ModelMeter",
+  "modelmeter.description": "LLM API 用量与费用监控 — DeepSeek、OpenAI、Claude、Kimi、硅基流动、智谱",
+  "modelmeter.view.name": "用量概览",
+  "modelmeter.cmd.setApiKey": "ModelMeter: 添加 / 配置 API 账户",
+  "modelmeter.cmd.manageApis": "ModelMeter: 管理 API 账户",
+  "modelmeter.cmd.refresh": "ModelMeter: 刷新用量数据",
+  "modelmeter.cmd.testConnection": "ModelMeter: 测试 API 连接",
+  "modelmeter.config.title": "ModelMeter",
+  "modelmeter.config.refreshInterval.desc": "自动刷新间隔（秒），最小值为 10。",
+  "modelmeter.config.customPricing.desc": "覆盖内置模型定价（USD / 1M tokens）。示例：`{ \"my-model\": { \"input\": 1.0, \"output\": 2.0 } }`",
+  "modelmeter.config.showStatusBar.desc": "在状态栏显示余额 / 服务商名称。"
+}
