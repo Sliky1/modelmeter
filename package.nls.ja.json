@@ -9,5 +9,8 @@
   "modelmeter.config.title": "ModelMeter",
   "modelmeter.config.refreshInterval.desc": "自動更新の間隔（秒）。最小値は 10 です。",
   "modelmeter.config.customPricing.desc": "モデルの組み込み価格を上書きします（USD / 1M トークン）。例: `{ \"my-model\": { \"input\": 1.0, \"output\": 2.0 } }`",
-  "modelmeter.config.showStatusBar.desc": "ステータスバーに残高 / プロバイダー名を表示します。"
+  "modelmeter.config.showStatusBar.desc": "ステータスバーに残高 / プロバイダー名を表示します。",
+  "modelmeter.cmd.addUsageRecord": "ModelMeter: Add Manual Usage Record",
+  "modelmeter.cmd.exportUsageCsv": "ModelMeter: Export Usage CSV",
+  "modelmeter.cmd.clearUsageHistory": "ModelMeter: Clear Usage History"
 }

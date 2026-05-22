@@ -728,5 +728,8 @@ export function t(): I18nStrings {
  * @example fmt(t().confirmDeleteMsg, alias)
  */
 export function fmt(template: string, ...args: string[]): string {
-    return template.replace(/\{(\d+)\}/g, (_, i) => args[Number(i)] ?? '');
+    let positionalIndex = 0;
+    return template
+        .replace(/\{(\d+)\}/g, (_, i) => args[Number(i)] ?? '')
+        .replace(/%s/g, () => args[positionalIndex++] ?? '');
 }

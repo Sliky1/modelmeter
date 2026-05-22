@@ -9,5 +9,8 @@
   "modelmeter.config.title": "ModelMeter",
   "modelmeter.config.refreshInterval.desc": "自動重新整理間隔（秒），最小值為 10。",
   "modelmeter.config.customPricing.desc": "覆寫內建模型定價（USD / 1M tokens）。範例：`{ \"my-model\": { \"input\": 1.0, \"output\": 2.0 } }`",
-  "modelmeter.config.showStatusBar.desc": "在狀態列顯示餘額 / 服務商名稱。"
+  "modelmeter.config.showStatusBar.desc": "在狀態列顯示餘額 / 服務商名稱。",
+  "modelmeter.cmd.addUsageRecord": "ModelMeter: Add Manual Usage Record",
+  "modelmeter.cmd.exportUsageCsv": "ModelMeter: Export Usage CSV",
+  "modelmeter.cmd.clearUsageHistory": "ModelMeter: Clear Usage History"
 }

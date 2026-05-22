@@ -1,43 +1,95 @@
 # 📊 ModelMeter
 
-**ModelMeter** is a professional-grade monitoring workbench for AI model usage and billing, specifically designed for developers. It goes beyond simple balance checking by implementing a local auditing engine to track every cent spent across multiple AI providers.
+**ModelMeter** is a VS Code extension for monitoring AI provider balances and estimating local AI model usage costs across DeepSeek, SiliconFlow, Moonshot/Kimi, OpenAI, Anthropic/Claude, and Zhipu GLM.
+
+Version **1.1.0** is a product-hardening release: it moves the extension to a modular architecture, removes external webview scripts, applies stricter webview rendering, enables custom pricing, and adds manual usage, CSV export, and history clearing workflows.
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-- **🚀 Multi-Provider Support**: Built-in configurations for DeepSeek, SiliconFlow, Moonshot (Kimi), OpenAI, Anthropic (Claude), and Zhipu AI.
-- **💰 Local Billing Audit**: Solves the issue of missing usage history in many official APIs by auditing "Prompt Cache Hit," "Miss," and "Output" tokens locally.
-- **📈 Advanced Visualization**: Features high-fidelity line charts for spending trends and stacked bar charts for token composition.
-- **⚙️ Account Management**: Add, switch, edit, or delete multiple API accounts with a seamless native VS Code interface.
-- **🌐 Global Connectivity**: Native support for VS Code HTTP proxy settings with dynamic module loading to ensure stable access worldwide.
-- **🔒 Security First**: API Keys are stored securely in VS Code `SecretStorage`, and usage data remains strictly on your local machine.
+- **Multi-provider accounts**: add, switch, edit, delete, and test API accounts.
+- **Balance monitoring**: supported for providers that expose balance APIs.
+- **Local usage estimation**: manually record token usage and estimate cost using built-in or custom pricing.
+- **Charts without CDN dependency**: local chart renderer inside the extension package.
+- **CSV export**: export the active account's local 30-day usage history.
+- **Privacy-first storage**: API keys use VS Code SecretStorage; local history stays in VS Code globalState.
+- **Proxy support**: respects VS Code `http.proxy` settings.
+- **Runtime settings**: status bar visibility, refresh interval, and custom pricing are applied at runtime.
 
-## 📸 Screenshots
+---
 
-| Dashboard Overview                                           | Usage Analytics                                              |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| ![Dashboard](https://raw.githubusercontent.com/your-username/modelmeter/main/images/dashboard.png) | ![Charts](https://raw.githubusercontent.com/your-username/modelmeter/main/images/charts.png) |
+## 🛠️ Installation
 
-## 🛠️ Installation & Setup
+From a packaged `.vsix`:
 
-1. Search for `ModelMeter` in the VS Code Marketplace and click **Install**.
-2. Click the **+ Add Account** button in the sidebar or the status bar icon to begin.
-3. Select your provider, enter an account alias (e.g., "Personal"), and provide your API Key.
-4. Your usage data will begin to populate as you interact with AI models.
+```bash
+code --install-extension modelmeter-1.1.0.vsix
+```
+
+From source:
+
+```bash
+npm install
+npm run compile
+```
+
+Launch the extension with VS Code's Extension Development Host.
+
+---
 
 ## 🎛️ Commands
 
-- `ModelMeter: Add New API Account`: Configure a new provider.
-- `ModelMeter: Manage API Accounts`: Switch, edit, or delete existing accounts.
-- `ModelMeter: Refresh Data`: Manually sync balance and update local views.
+- `ModelMeter: Add / Configure API Account`
+- `ModelMeter: Manage API Accounts`
+- `ModelMeter: Refresh Usage Data`
+- `ModelMeter: Test API Connection`
+- `ModelMeter: Add Manual Usage Record`
+- `ModelMeter: Export Usage CSV`
+- `ModelMeter: Clear Usage History`
 
-## 🛡️ Privacy
+---
 
-ModelMeter respects your privacy:
-- **No Data Collection**: Your usage habits and API Keys never leave your computer.
-- **Local Storage**: All history is stored in the extension's `globalState`.
+## ⚙️ Settings
+
+```json
+{
+  "modelmeter.refreshInterval": 60,
+  "modelmeter.showStatusBar": true,
+  "modelmeter.customPricing": {
+    "openai:gpt-4o": {
+      "input": 2.5,
+      "output": 10,
+      "cachedInput": 1.25
+    }
+  }
+}
+```
+
+Pricing values are USD per 1M tokens.
+
+---
+
+## 🔒 Privacy and Security
+
+- API keys are stored through VS Code SecretStorage.
+- ModelMeter does not collect telemetry.
+- Local usage history is not uploaded.
+- Webview scripts are local to the extension package.
+- Provider requests are only sent when testing a connection or querying balance.
+
+See [SECURITY.md](SECURITY.md) and [PRIVACY.md](PRIVACY.md).
+
+---
+
+## 📚 Documentation
+
+- [Usage](docs/USAGE.md)
+- [Providers](docs/PROVIDERS.md)
+- [Pricing](docs/PRICING.md)
+
+---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+MIT. See [LICENSE](LICENSE).

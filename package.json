@@ -2,7 +2,7 @@
   "name": "modelmeter",
   "displayName": "%modelmeter.displayName%",
   "description": "%modelmeter.description%",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "MACAT",
   "author": "MACAT",
   "license": "MIT",
@@ -77,6 +77,21 @@
         "command": "modelmeter.testConnection",
         "title": "%modelmeter.cmd.testConnection%",
         "icon": "$(plug)"
+      },
+      {
+        "command": "modelmeter.addUsageRecord",
+        "title": "%modelmeter.cmd.addUsageRecord%",
+        "icon": "$(plus)"
+      },
+      {
+        "command": "modelmeter.exportUsageCsv",
+        "title": "%modelmeter.cmd.exportUsageCsv%",
+        "icon": "$(export)"
+      },
+      {
+        "command": "modelmeter.clearUsageHistory",
+        "title": "%modelmeter.cmd.clearUsageHistory%",
+        "icon": "$(clear-all)"
       }
     ],
     "menus": {
@@ -90,6 +105,17 @@
           "command": "modelmeter.manageApis",
           "when": "view == modelmeter.usageView",
           "group": "navigation@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "modelmeter.addUsageRecord"
+        },
+        {
+          "command": "modelmeter.exportUsageCsv"
+        },
+        {
+          "command": "modelmeter.clearUsageHistory"
         }
       ]
     },
